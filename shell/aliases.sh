@@ -3,8 +3,9 @@ alias sudo='sudo '
 
 alias ..="cd .."
 alias ...="cd ../.."
-alias ll="ls -l"
-alias la="ls -la"
+alias ls="ls"
+alias ll="lsd -l"
+alias la="lsd -la"
 alias ~="cd ~"
 alias dotfiles='cd $DOTFILES_PATH'
 
