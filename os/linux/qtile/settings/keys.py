@@ -26,6 +26,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Toggle floating
     ([mod, "shift"], "f", lazy.window.toggle_floating()),
 
+
+
     # Move windows up or down in current stack
     ([mod, "shift"], "j", lazy.layout.shuffle_down()),
     ([mod, "shift"], "k", lazy.layout.shuffle_up()),
@@ -78,6 +80,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     )),
     ([], "XF86AudioMute", lazy.spawn(
         "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    )),
+    ([], "XF86AudioMicMute", lazy.spawn(
+        "amixer set Capture toggle"
     )),
 
     # Brightness
