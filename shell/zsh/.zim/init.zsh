@@ -8,3 +8,4 @@ source /home/usarral/.dotfiles/shell/zsh/.zim/modules/input/init.zsh
 source /home/usarral/.dotfiles/shell/zsh/.zim/modules/completion/init.zsh
 source /home/usarral/.dotfiles/shell/zsh/.zim/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/usarral/.dotfiles/shell/zsh/.zim/modules/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/usarral/.dotfiles/shell/zsh/.zim/modules/zsh-sudo/sudo.plugin.zsh
