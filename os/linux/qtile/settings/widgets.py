@@ -28,7 +28,7 @@ def powerline(fg="light", bg="dark"):
         **base(fg, bg),
         text="", # Icon: nf-oct-triangle_left
         fontsize=37,
-        padding=-2
+        padding=-5
     )
 
 
@@ -37,7 +37,7 @@ def workspaces():
         separator(),
         widget.GroupBox(
             **base(fg='light'),
-            font='UbuntuMono Nerd Font',
+            font='CaskaydiaCove NF',
             fontsize=19,
             margin_y=3,
             margin_x=0,
@@ -123,7 +123,7 @@ secondary_widgets = [
 ]
 
 widget_defaults = {
-    'font': 'UbuntuMono Nerd Font Bold',
+    'font': 'CaskaydiaCove NF',
     'fontsize': 14,
     'padding': 1,
 }
