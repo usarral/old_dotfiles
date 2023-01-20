@@ -8,4 +8,5 @@
 - link:
     ~/.dotly: os/linux/.dotly
     ~/.config/qtile: os/linux/qtile
-    ~/Docker/PHP2023: ~/Dev/DAW/Desarrollo_Web_Entorno_Servidor
+    ~/.config/betterlockscreen: os/linux/betterlockscreen
+    ~/docker/PHP2023: ~/Dev/DAW/Desarrollo_Web_Entorno_Servidor
