@@ -1,13 +1,48 @@
 from libqtile import widget
 from .theme import colors
+import requests
+import os
 
-# Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
-def base(fg='text', bg='dark'): 
+def base(fg='text', bg='dark'):
     return {
         'foreground': colors[fg],
         'background': colors[bg]
     }
+
+
+def getInterface():
+    # For network Widget
+    # Get the network interfaces
+    interfaces = os.listdir('/sys/class/net')
+    # Remove the loopback interface
+    interfaces.remove('lo')
+    # If there is only one interface, use it
+    upinterface = interfaces[0]
+    # If there are multiple interfaces, use the one that is not a virtual interface
+    if len(interfaces) > 1:
+        for interface in interfaces:
+            # get status of interface
+            status = os.popen('cat /sys/class/net/' +
+                              interface + '/operstate').read()
+            # if status is down, remove it from the list
+            if status == 'down':
+                interfaces.remove(interface)
+            # if status is up, check if it is a virtual interface
+            elif status == 'up':
+                # get the device type
+                device_type = os.popen(
+                    'cat /sys/class/net/' + interface + '/device/type').read()
+                # if device type is 1, it is a virtual interface
+                if device_type == '1':
+                    interfaces.remove(interface)
+
+        # if there is only one interface left, use it
+        if len(interfaces) == 1:
+            return interfaces[0]
+        # if there are multiple interfaces left, use the first one
+        else:
+            return interfaces[0]
 
 
 def separator():
@@ -23,16 +58,35 @@ def icon(fg='text', bg='dark', fontsize=16, text="?"):
     )
 
 
+def GetWeather(fg='text', bg='dark'):
+    url = 'https://wttr.in/?format=3'
+    response = requests.get(url)
+    # If response is not 200, return error message
+    if response.status_code != 200:
+
+        return "Error al obtener el clima"
+    # If response is 200, return the weather
+    # Delete second line of response which is white space
+    response = response.text.splitlines()[0]
+
+    # Split response into city and weather
+    # City is the first part of the response before the comma
+    city = response.split(',')[0]
+    # Weather is the second part of the response after the :
+    weather = response.split(':')[1]
+    return city + " " + weather
+
+
 def powerline(fg="light", bg="dark"):
     return widget.TextBox(
         **base(fg, bg),
-        text="", # Icon: nf-oct-triangle_left
+        text="",  # Icon: nf-oct-triangle_left
         fontsize=37,
         padding=-5
     )
 
 
-def workspaces(): 
+def workspaces():
     return [
         separator(),
         widget.GroupBox(
@@ -69,15 +123,14 @@ primary_widgets = [
 
     powerline('color4', 'dark'),
 
-    icon(bg="color4", text='WEATHER '), # Icon: nf-fa-download
-    
+    icon(bg="color4", text=GetWeather()),
 
     powerline('color3', 'color4'),
 
-    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
-    
-    widget.Net(**base(bg='color3'), interface='wlan0'),
+    icon(bg="color3", fontsize=17, text=' '),  # Icon: nf-fa-download
 
+    widget.Net(**base(bg='color3'), interface=getInterface(),
+               format='{down} ↓↑ {up}'),
     powerline('color2', 'color3'),
 
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
@@ -86,9 +139,9 @@ primary_widgets = [
 
     powerline('color1', 'color2'),
 
-    icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
+    icon(bg="color1", fontsize=17, text=' '),  # Icon: nf-mdi-calendar_clock
 
-    widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
+    widget.Clock(**base(bg='color1'), format='%d/%m/%y - %H:%M '),
 
     powerline('dark', 'color1'),
 
