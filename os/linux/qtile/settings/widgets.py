@@ -88,31 +88,26 @@ def powerline(fg="light", bg="dark"):
 
 def workspaces():
     return [
-        separator(),
         widget.GroupBox(
             **base(fg='light'),
-            font='CaskaydiaCove NF',
-            fontsize=19,
-            margin_y=3,
-            margin_x=0,
-            padding_y=8,
-            padding_x=5,
-            borderwidth=1,
-            active=colors['active'],
-            inactive=colors['inactive'],
-            rounded=False,
-            highlight_method='block',
-            urgent_alert_method='block',
-            urgent_border=colors['urgent'],
-            this_current_screen_border=colors['focus'],
-            this_screen_border=colors['grey'],
-            other_current_screen_border=colors['dark'],
-            other_screen_border=colors['dark'],
-            disable_drag=True
+            disable_drag=True,
+            fontsize=16,
+            center_aligned=True,
+            margin=5,
+            padding=20,
+            
+             borderwidth=3,
+             active=colors['active'],
+             inactive=colors['inactive'],
+             highlight_method='block',
+             urgent_alert_method='block',
+             urgent_border=colors['urgent'],
+             this_current_screen_border=colors['focus'],
+             this_screen_border=colors['grey'],
+             other_current_screen_border=colors['dark'],
+             other_screen_border=colors['dark'],
         ),
-        separator(),
         widget.WindowName(**base(fg='focus'), fontsize=14, padding=5),
-        separator(),
     ]
 
 

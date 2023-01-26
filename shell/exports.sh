@@ -23,6 +23,11 @@ else
 fi
 
 export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
+# ------------------------------------------------------------------------------
+# Tools
+# ------------------------------------------------------------------------------
+# - PNPM
+export PNPM_HOME="/home/usarral/.local/share/pnpm"
 
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has
@@ -45,6 +50,7 @@ path+=(
 	"/usr/bin"
 	"/usr/sbin"
 	"/sbin"
+	"$PNPM_HOME"
 )
 
 export path

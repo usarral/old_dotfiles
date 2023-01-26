@@ -27,3 +27,8 @@ prompt ${DOTLY_THEME:-codely}
 source "$DOTLY_PATH/shell/zsh/bindings/dot.zsh"
 source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"
 source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
+
+# pnpm
+export PNPM_HOME="/home/usarral/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

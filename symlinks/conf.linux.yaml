@@ -9,4 +9,7 @@
     ~/.dotly: os/linux/.dotly
     ~/.config/qtile: os/linux/qtile
     ~/.config/betterlockscreen: os/linux/betterlockscreen
+    ~/.config/rofi: os/linux/rofi
+    ~/.config/neofetch: os/linux/neofetch
+    ~/.config/flameshot: os/linux/flameshot
     ~/docker/PHP2023: ~/Dev/DAW/Desarrollo_Web_Entorno_Servidor

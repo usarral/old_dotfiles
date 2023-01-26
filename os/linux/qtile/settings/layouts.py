@@ -24,7 +24,7 @@ layouts = [
     layout.RatioTile(**layout_conf),
     # layout.Columns(),
     # layout.Tile(),
-    # layout.TreeTab(),
+    layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
 ]
