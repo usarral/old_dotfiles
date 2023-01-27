@@ -1,7 +1,0 @@
-docker start php2023
-docker exec php2023 service apache2 start
-docker exec php2023 service mysql start
-# start https://localhost:22080/phpmyadmin
-# start http://localhost:22080
-code /home/usarral/docker/PHP2023
-docker exec php2023 tail -f /var/log/apache2/error.log

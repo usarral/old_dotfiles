@@ -1,8 +1,0 @@
-batstat-git
-docker-desktop
-google-chrome
-mailspring
-nerd-fonts-cascadia-code
-nm-tray
-snapd
-visual-studio-code-bin
