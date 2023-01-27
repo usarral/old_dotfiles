@@ -1,0 +1,155 @@
+{
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "[handlebars]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features",
+        "editor.suggest.insertMode": "replace"
+    },
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "console-ninja.captureFunctions": true,
+    "console-ninja.toolsToEnableSupportAutomaticallyFor": {
+        "live-preview": true,
+        "live-server": true
+    },
+    "debug.disassemblyView.showSourceCode": false,
+    "diffEditor.codeLens": true,
+    "docwriter.custom.author": "Carlos Sesma @usarral",
+    "docwriter.custom.template": "{{summary}}\n{{#params}}\n@param {{name}} ({{type}}) - {{paramExplained}}\n{{/params}}\n{{#returnExplained}}\n@returns {{.}}\n{{/returnExplained}}",
+    "docwriter.hotkey.windows": "Alt + .",
+    "docwriter.language": "Spanish",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.codeLensFontFamily": "Jetbrains Mono, Hack Nerd Font Mono, Consolas, 'Courier New', monospace",
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.fontFamily": "CaskaydiaCove Nerd Font,JetBrainsMono Nerd Font, Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.guides.bracketPairsHorizontal": true,
+    "editor.inlayHints.fontFamily": "Jetbrains Mono, Hack Nerd Font Mono, Consolas, 'Courier New', monospace",
+    "editor.inlayHints.padding": true,
+    "editor.inlineSuggest.enabled": true,
+    "editor.linkedEditing": true,
+    "editor.minimap.autohide": true,
+    "editor.quickSuggestions": {
+        "comments": true
+    },
+    "editor.scrollbar.scrollByPage": true,
+    "editor.smoothScrolling": true,
+    "editor.stickyScroll.enabled": true,
+    "editor.suggest.showWords": false,
+    "editor.suggestSelection": "first",
+    "editor.wordWrap": "on",
+    "emmet.excludeLanguages": [
+        "markdown"
+    ],
+    "emmet.includeLanguages": {
+        "php": "html",
+        "scss": "css",
+        "svelte": "html"
+    },
+    "errorLens.fontFamily": "Jetbrains Mono, Hack Nerd Font Mono, Consolas, 'Courier New', monospace",
+    "eslint.alwaysShowStatus": true,
+    "explorer.confirmDragAndDrop": false,
+    "files.associations": {
+        "*.sql": "sql"
+    },
+    "files.autoSave": "onWindowChange",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true
+    },
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "github.copilot.advanced": {},
+    "github.copilot.enable": {
+        "*": true,
+        "csv": false,
+        "dotenv": false,
+        "env": false,
+        "html": true,
+        "java": true,
+        "javascript": true,
+        "jsonc": true,
+        "latex": true,
+        "markdown": true,
+        "oraclesql": false,
+        "php": true,
+        "plaintext": false,
+        "rust": false,
+        "shellscript": true,
+        "ssh_config": false,
+        "yaml": false
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "markdown-pdf.headerTemplate": "<div style=\"font-size: 9px; margin-left: 1cm;\"> <span class='author'>Carlos Sesma Usarralde</span></div> <div style=\"font-size: 9px; margin-left: auto; margin-right: 1cm; \"> <span class='date'></span></div>",
+    "php.suggest.basic": false,
+    "phpserver.phpPath": "C:\\tools\\php81\\php.exe",
+    "problems.showCurrentInStatus": true,
+    "rapidapi.terminalLink.enabled": false,
+    "remote.SSH.remotePlatform": {
+        "145.14.152.51": "linux",
+        "gdmlamercedServer": "linux",
+        "pedrotercero.com": "linux"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "svelte.enable-ts-plugin": true,
+    "telemetry.telemetryLevel": "off",
+    "terminal.external.windowsExec": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.15.2874.0_x64__8wekyb3d8bbwe\\wt.exe",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font,JetBrainsMono Nerd Font, Consolas, 'Courier New', monospace",
+    "window.commandCenter": true,
+    "window.dialogStyle": "custom",
+    "window.menuBarVisibility": "compact",
+    "window.zoomLevel": 1,
+    "workbench.colorCustomizations": {},
+    "workbench.colorTheme": "Dracula",
+    "workbench.editor.languageDetection": true,
+    "workbench.iconTheme": "symbols",
+    "workbench.productIconTheme": "fluent-icons",
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "none"
+}
