@@ -38,11 +38,12 @@ def getInterface():
                     interfaces.remove(interface)
 
         # if there is only one interface left, use it
-        if len(interfaces) == 1:
+        if len(interfaces) >= 1:
             return interfaces[0]
+        
         # if there are multiple interfaces left, use the first one
         else:
-            return interfaces[0]
+            return null
 
 
 def separator():
@@ -57,25 +58,27 @@ def icon(fg='text', bg='dark', fontsize=16, text="?"):
         padding=3
     )
 
-
 def GetWeather(fg='text', bg='dark'):
-    url = 'https://wttr.in/?format=3'
-    response = requests.get(url)
-    # If response is not 200, return error message
-    if response.status_code != 200:
+     url = 'https://wttr.in/?format=3'
+     response = requests.get(url)
+     # If response is not 200, return error message
+     if response.status_code != 200:
+         return "Error al obtener el clima"
+     # If response is 200, return the weather
+     # Delete second line of response which is white space
+     response = response.text.splitlines()[0]
+     # Split response into city and weather
+     # City is the first part of the response before the comma
+     city = response.split(',')[0]
+     # Weather is the second part of the response after the :
+     weather = response.split(':')[1]
+     return city + " " + weather
 
-        return "Error al obtener el clima"
-    # If response is 200, return the weather
-    # Delete second line of response which is white space
-    response = response.text.splitlines()[0]
-
-    # Split response into city and weather
-    # City is the first part of the response before the comma
-    city = response.split(',')[0]
-    # Weather is the second part of the response after the :
-    weather = response.split(':')[1]
-    return city + " " + weather
-
+def WeatherWidget():
+    try:
+        return powerline('color4', 'dark') + icon(bg="color4", text=GetWeather()) + powerline('color3', 'color4')
+    except:
+        return ""
 
 def powerline(fg="light", bg="dark"):
     return widget.TextBox(
@@ -111,53 +114,31 @@ def workspaces():
     ]
 
 
+
 primary_widgets = [
     *workspaces(),
-
     separator(),
-
-    powerline('color4', 'dark'),
-
-    icon(bg="color4", text=GetWeather()),
-
-    powerline('color3', 'color4'),
-
+    powerline('color3', 'dark'),
     icon(bg="color3", fontsize=17, text=' '),  # Icon: nf-fa-download
-
-    widget.Net(**base(bg='color3'), interface=getInterface(),
-               format='{down} ↓↑ {up}'),
+    widget.Net(**base(bg='color3'), interface=getInterface(),format='{down} ↓↑ {up}'),
     powerline('color2', 'color3'),
-
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
-
     widget.CurrentLayout(**base(bg='color2'), padding=5),
-
     powerline('color1', 'color2'),
-
     icon(bg="color1", fontsize=17, text=' '),  # Icon: nf-mdi-calendar_clock
-
     widget.Clock(**base(bg='color1'), format='%d/%m/%y - %H:%M '),
-
     powerline('dark', 'color1'),
-
     widget.Systray(background=colors['dark'], padding=5),
 ]
 
 secondary_widgets = [
     *workspaces(),
-
     separator(),
-
     powerline('color1', 'dark'),
-
     widget.CurrentLayoutIcon(**base(bg='color1'), scale=0.65),
-
     widget.CurrentLayout(**base(bg='color1'), padding=5),
-
     powerline('color2', 'color1'),
-
     widget.Clock(**base(bg='color2'), format='%d/%m/%Y - %H:%M '),
-
     powerline('dark', 'color2'),
 ]
 

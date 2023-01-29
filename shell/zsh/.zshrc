@@ -32,3 +32,5 @@ source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
 export PNPM_HOME="/home/usarral/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+export XDG_RUNTIME_DIR=$HOME/.config/$(id -u)

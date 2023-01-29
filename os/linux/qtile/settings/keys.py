@@ -12,7 +12,6 @@ mod = "mod4"
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
-
     # Switch between windows in current stack pane
     ([mod], "j", lazy.layout.down()),
     ([mod], "k", lazy.layout.up()),
@@ -47,7 +46,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "control"], "r", lazy.restart()),
 
     ([mod, "control"], "q", lazy.shutdown()),
-    ([mod], "r", lazy.spawncmd()),
+    #([mod], "r", lazy.spawncmd()),
 
     # Run betterlockscreen
     ([mod], "l", lazy.spawn("betterlockscreen -l")),
