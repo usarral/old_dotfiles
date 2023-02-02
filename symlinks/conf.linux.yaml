@@ -13,5 +13,7 @@
     ~/.config/neofetch: os/linux/neofetch
     ~/.config/flameshot: os/linux/flameshot
     ~/.config/kitty: /home/usarral/.dotfiles/os/linux/kitty
+    ~/.config/bashtop: /home/usarral/.dotfiles/os/crossplatform/bashtop
+    ~/.config/espanso: /home/usarral/.dotfiles/os/crossplatform/espanso
     ~/docker/PHP2023: ~/Dev/DAW/Desarrollo_Web_Entorno_Servidor
     ~/docker/laravel: ~/Dev/DAW/Desarrollo_Web_Entorno_Servidor/app
