@@ -12,5 +12,6 @@
     ~/.config/rofi: os/linux/rofi
     ~/.config/neofetch: os/linux/neofetch
     ~/.config/flameshot: os/linux/flameshot
+    ~/.config/kitty: /home/usarral/.dotfiles/os/linux/kitty
     ~/docker/PHP2023: ~/Dev/DAW/Desarrollo_Web_Entorno_Servidor
     ~/docker/laravel: ~/Dev/DAW/Desarrollo_Web_Entorno_Servidor/app
