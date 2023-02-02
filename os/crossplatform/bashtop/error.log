@@ -1,0 +1,12 @@
+ 
+New instance of bashtop version: 0.9.25 Pid: 43481
+ 
+New instance of bashtop version: 0.9.25 Pid: 69694
+ 
+New instance of bashtop version: 0.9.25 Pid: 70241
+ 
+New instance of bashtop version: 0.9.25 Pid: 73178
+17:38:08 ERROR: On line 471 
+/usr/bin/bashtop: line 4806: ${pycoproc[1]}: ambiguous redirect
+ 
+New instance of bashtop version: 0.9.25 Pid: 73858
