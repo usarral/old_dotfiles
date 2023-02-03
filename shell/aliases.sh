@@ -8,6 +8,8 @@ alias ll="lsd -l"
 alias la="lsd -la"
 alias ~="cd ~"
 alias dotfiles='cd $DOTFILES_PATH'
+alias sd="cd ~ && cd \$(find * -type d | fzf)"
+
 
 # Git
 alias gaa="git add -A"
