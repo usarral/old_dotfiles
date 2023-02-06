@@ -17,3 +17,19 @@ function recent_dirs() {
 
 	cd "$(echo "$selected" | sed "s/\~/$escaped_home/")" || echo "Invalid directory"
 }
+
+function load_dotenv(){
+	# Load the .env file on ~/.dotfiles/.env on the current shell
+	# Usage: load_dotenv
+	# Example: load_dotenv
+
+	# Check if the .env file exists
+	if [ -f "$DOTFILES_PATH/.env" ]; then
+		# Load the .env file
+		for line in $(cat "$DOTFILES_PATH/.env"); do
+			export $line
+		done
+		else
+		echo "The .env file doesn't exists"
+	fi
+}
