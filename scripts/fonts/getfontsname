@@ -1,3 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? List all fonts with the usage name
+#?? 1.0.0
+##?
+##? Usage:
+##?   getfontsname
+docs::parse "$@"
+
 fc-list \
     | grep -ioE ": [^:]*$1[^:]+:" \
     | sed -E 's/(^: |:)//g' \

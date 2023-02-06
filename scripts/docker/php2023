@@ -1,3 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Run docker container for the module Desarrollo_Web_Entorno_Servidor (PHP2023).
+#?? 1.0.0
+##?
+##? Usage:
+##?   php2023
+docs::parse "$@"
+
 docker start php2023
 docker exec php2023 service apache2 start
 docker exec php2023 service mysql start
