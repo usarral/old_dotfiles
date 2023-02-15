@@ -5,3 +5,4 @@ shell/zsh/.zim/modules/zsh-autosuggestions
 modules/dotly
 .env
 os/crossplatform/bashtop/error.log
+

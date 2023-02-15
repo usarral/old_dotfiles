@@ -9,7 +9,7 @@ export CODELY_THEME_PWD_MODE="short" # full, short, home_relative
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-15.jdk/Contents/Home'
+export JAVA_HOME='/usr/bin/java'
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 
@@ -23,7 +23,7 @@ else
 fi
 
 export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
-export UID=$(id -u) 
+export UID=$(id -u)
 export GID=$(id -g)
 # ------------------------------------------------------------------------------
 # Tools
