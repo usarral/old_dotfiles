@@ -1,0 +1,76 @@
+#!/bin/bash
+# Name: ghc
+# Description: Github clone organized by author
+# Author: Carlos (@usarral)
+# Version: 1.0
+# Date: 2023-03-19
+# Usage: ghc -u <author> -r <repo> || ghc <URL>
+
+# --------------------
+# Variables
+# --------------------
+# --------------------
+# Default path to clone the repos
+path="$HOME/Projects"
+
+# Functions
+# --------------------
+# --------------------
+
+if [[ $1 == *"github.com"* ]]; then
+    # Split from the URL the author and the repo
+    if [[ $1 == *"https"* ]]; then
+        #Strucutre: https://github.com/user/repo.git
+        author=$(echo $1 | cut -d "/" -f 4)
+        repo=$(echo $1 | cut -d "/" -f 5)
+    else
+        #Strucutre: git@github.com:author/repo.git
+        author=$(echo $1 | cut -d ":" -f 2 | cut -d "/" -f 1)
+        repo=$(echo $1 | cut -d ":" -f 2 | cut -d "/" -f 2 | cut -d "." -f 1)
+
+    fi
+else
+    # Get the -u, -r, -h arguments
+    while getopts ":u:r:h" opt; do
+        case $opt in
+        u)
+            author="$OPTARG"
+            ;;
+        r)
+            repo="$OPTARG"
+            ;;
+        h)
+            echo "Usage: ghc -u <author> -r <repo> || ghc <URL>"
+            exit 0
+            ;;
+        \?)
+            echo "Invalid option -$OPTARG" >&2
+            ;;
+        esac
+    done
+    # Check if the arguments are empty
+    if [[ -z $author ]] || [[ -z $repo ]]; then
+        echo "Usage: ghc -u <author> -r <repo> || ghc <URL>"
+        exit 1
+    fi
+fi
+
+# If the path doesn't exist, create it
+if [[ ! -d "$path/$author" ]]; then
+    mkdir -p "$path/$author"
+fi
+
+# Clone the repo
+try=$(git clone "git@github.com:$author/$repo.git" "$path/$author/$repo" 2>&1)
+#get the exit code from try
+exit_code=$?
+# If the repo already exists, pull the changes
+if [[ $exit_code -eq 128 ]]; then
+    cd "$path/$author/$repo"
+    git pull
+    exit 0
+fi
+if [[ $exit_code -eq 0 ]]; then
+    echo "Repo cloned successfully"
+    exit 0
+fi
